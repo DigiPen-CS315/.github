@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: Crash report
 about: Create a report for each of the 7 crash scenarios
 title: "[BUG] Scenario #"
 labels: 'Bug'
