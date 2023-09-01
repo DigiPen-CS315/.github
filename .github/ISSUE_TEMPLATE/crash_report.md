@@ -1,13 +1,13 @@
 ---
 name: Crash report
 about: Create a report for each of the 7 crash scenarios
-title: "[BUG] Scenario #"
+title: "[Crash] Scenario #"
 labels: 'Bug'
-assignees: 'DigiPen-CS315/instructors, DigiPen-CS315/tas'
+assignees: 'instructors, tas'
 
 ---
 
-#### Bug scenario
+#### Crash scenario
 \# <!-- replace this text -->
 
 #### Crash Pattern
