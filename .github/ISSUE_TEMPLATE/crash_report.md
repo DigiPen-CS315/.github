@@ -2,7 +2,7 @@
 name: Crash report
 about: Create a report for each of the 7 crash scenarios
 title: "[Crash] Scenario #"
-labels: 'Bug'
+labels: 'bug'
 assignees: 'ryancdavison, HunterSmith-Dragon'
 
 ---
