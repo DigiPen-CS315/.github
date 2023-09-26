@@ -31,6 +31,9 @@ Paste the call stack here   <!-- replace this text -->
 #### Additional context
 Add any other context about the problem here. This is especially useful to get partial credit.   <!-- replace this text -->
 
+#### Potential Fix
+Describe what could be done to fix the issue.   <!-- replace this text -->
+
 #### How long did this bug take to track?
 \# hours  <!-- replace this text -->
 
