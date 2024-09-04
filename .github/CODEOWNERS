@@ -13,15 +13,15 @@
 
 
 # Global rule:
-*                               @DigiPen-CS315/tas @DigiPen-CS315/instructors
+*                               @DigiPen-CS314/tas @DigiPen-CS314/instructors
 
 
 # Other examples:
 
 # documentation folder
-# /art/                         @DigiPen-CS315/art-reviewers-team  @art-lead-username
+# /art/                         @DigiPen-CS314/art-reviewers-team  @art-lead-username
 
 # scripts folders with nested folder override example
-# /scripts/                     @DigiPen-CS315/dev-leads-team
+# /scripts/                     @DigiPen-CS314/dev-leads-team
 # /sripts/another/folder/       @another-dev-lead-username
 # /sripts/a/different/folder/   @different-dev-lead-username
