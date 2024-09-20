@@ -21,7 +21,7 @@ Possible reason or underlying cause for the crash. i.e. "It looks like someone m
 The given exception code. i.e. STACK_OVERFLOW   <!-- replace this text -->
 
 #### Call Stack
-Paste the call stack here   <!-- replace this text -->
+Paste the call stack here.   <!-- replace this text -->
 
 #### What registers, stack information, and memory you looked at for clues.
 [  ]   <!-- replace this text -->
