@@ -1,4 +1,4 @@
-name: Crash Report 2
+name: Crash Report
 description: One report per scenario
 labels: ["crash-report"]
 body:
@@ -20,7 +20,7 @@ body:
   - type: dropdown
     id: pattern
     attributes:
-      label: Crash Pattern (from notes)
+      label: Crash Pattern (from the [slides](https://github.com/DigiPen-CS315/DigiPen-CS315/blob/main/notes/week04/4.1-CrashPatterns.md#crash-patterns))
       options:
         - Null Data Pointer
         - Null Class/Struct Pointer
@@ -61,8 +61,8 @@ body:
   - type: textarea
     id: stacktrace
     attributes:
-      label: Cleaned call stack (module!symbol+offset)
-      description: Copy/Paste the Call Stack from the Visual Studio call stack window.
+      label: Call stack
+      description: Copy/Paste the Call Stack from the Visual Studio Call Stack window.
       render: text
       placeholder: |
         dllX!Foo+0x30
@@ -79,13 +79,15 @@ body:
   - type: checkboxes
     id: evidence
     attributes:
-      label: Evidence reviewed
+      label: Evidence reviewed (what did you use to trace the issue)
       options:
         - label: Registers
         - label: Stack memory
         - label: Heap memory
         - label: Disassembly
+        - label: Call stack
         - label: Modules window
+        - label: Live debugger (tracing)
         - label: Other (noted in Additional Context)
 
   - type: textarea
