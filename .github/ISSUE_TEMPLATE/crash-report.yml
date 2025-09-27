@@ -42,8 +42,20 @@ body:
   - type: input
     id: exception_code
     attributes:
-      label: Exception code (e.g., 0xC0000005)
+      label: Exception code
       description: Copy/Paste the Exception Code from the Visual Studio Exception Assistant window.
+      render: text
+      placeholder: "0xC0000005"
+    validations:
+      required: true
+  
+  - type: input
+    id: instruction
+    attributes:
+      label: Crashing instruction
+      description: Copy/Paste the crashing instruction from the Visual Studio Disassembly window.
+      render: asm
+      placeholder: "idiv eax, ecx"
     validations:
       required: true
 
@@ -52,6 +64,7 @@ body:
     attributes:
       label: Why is this the pattern?
       description: Briefly justify your pattern selection (2–4 sentences).
+      render: text
       placeholder: "I chose Null pointer deref because …"
     validations:
       required: true
@@ -61,6 +74,7 @@ body:
     attributes:
       label: Root Cause Summary
       description: 2–4 sentences explaining what went wrong and why (tie to frames/instruction).
+      render: text
       placeholder: "Likely null pointer passed into dllX!Foo from …"
     validations:
       required: true
@@ -70,20 +84,11 @@ body:
     attributes:
       label: Call stack
       description: Copy/Paste the Call Stack from the Visual Studio Call Stack window.
-      render: text
+      render: c++
       placeholder: |
         dllX!Foo+0x30
         dllX!Bar+0x120
         app!Main+0x90
-    validations:
-      required: true
-
-  - type: textarea
-    id: fix
-    attributes:
-      label: Potential Fix / Mitigation
-      description: 1–2 sentences.
-      placeholder: "Add null-check in dllX!Foo; validate input in caller…"
     validations:
       required: true
 
@@ -105,9 +110,20 @@ body:
       required: true
 
   - type: textarea
+    id: fix
+    attributes:
+      label: Potential Fix / Mitigation
+      description: 1–2 sentences.
+      render: text
+      placeholder: "Add null-check in dllX!Foo; validate input in caller…"
+    validations:
+      required: true
+
+  - type: textarea
     id: additional
     attributes:
       label: Additional Context (optional)
+      render: text
       placeholder: "Anything noteworthy for partial credit."
 
   - type: textarea
@@ -115,12 +131,14 @@ body:
     attributes:
       label: Extra Credit (optional)
       description: Scenarios 1, 2, 6, and 7 only.  See project documentation.
+      render: text
       placeholder: "Anything noteworthy for extra credit."
 
   - type: input
     id: time
     attributes:
       label: Time Spent (hours)
+      render: text
       placeholder: "3.5 hours"
     validations:
       required: true
