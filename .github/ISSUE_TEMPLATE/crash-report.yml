@@ -7,45 +7,95 @@ body:
     attributes:
       label: Scenario
       options:
-        - 1: Null Data Pointer
-        - 2: Null Class/Struct Pointer
-        - 3: Out of Bounds - Access Violation (read)
-        - 4: Out of Bounds - Access Violation (write)
-        - 5: Null Function Pointer
-        - 6: Bad Function Pointer
-        - 7: Bad Virtual Function Call
-        - 8: Corrupt Return Address
-        - 9: Incorrect Call Stack
-        - 10: Stack Overflow
-        - 11: Division by Zero
-        - 12: Uncaught C++ Exception
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
     validations:
       required: true
+  
+  - type: dropdown
+    id: pattern
+    attributes:
+      label: Crash Pattern (from notes)
+      options:
+        - Null Data Pointer
+        - Null Class/Struct Pointer
+        - Out of Bounds - Access Violation (read)
+        - Out of Bounds - Access Violation (write)
+        - Null Function Pointer
+        - Bad Function Pointer
+        - Bad Virtual Function Call
+        - Corrupt Return Address
+        - Incorrect Call Stack
+        - Stack Overflow
+        - Division by Zero
+        - Uncaught C++ Exception
+    validations:
+      required: true
+  
   - type: input
     id: exception_code
     attributes:
       label: Exception code (e.g., 0xC0000005)
+
   - type: textarea
-    id: windbg_analyze
+    id: why
     attributes:
-      label: WinDbg `!analyze -v` key excerpt
-      description: Paste only the key excerpt (exception info + stack summary)
-      render: text
+      label: Why is this the pattern?
+      description: Briefly justify your pattern selection (2–4 sentences).
+      placeholder: "I chose Null pointer deref because …"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Root Cause Summary
+      description: 2–4 sentences explaining what went wrong and why (tie to frames/instruction).
+      placeholder: "Likely null pointer passed into dllX!Foo from …"
+
   - type: textarea
     id: stacktrace
     attributes:
       label: Cleaned call stack (module!symbol+offset)
       description: Copy/Paste the Call Stack from the Visual Studio call stack window.
       render: text
-  - type: textarea
-    id: root_cause
-    attributes:
-      label: Root cause summary (2–4 sentences)
-  - type: textarea
-    id: repro
-    attributes:
-      label: Minimal repro steps (if known)
+      placeholder: |
+        dllX!Foo+0x30
+        dllX!Bar+0x120
+        app!Main+0x90
+
   - type: textarea
     id: fix
     attributes:
-      label: Likely fix or mitigation (1–2 sentences)
+      label: Potential Fix / Mitigation
+      description: 1–2 sentences.
+      placeholder: "Add null-check in dllX!Foo; validate input in caller…"
+
+  - type: checkboxes
+    id: evidence
+    attributes:
+      label: Evidence reviewed
+      options:
+        - label: Registers
+        - label: Stack memory
+        - label: Heap memory
+        - label: Disassembly
+        - label: Modules window
+        - label: Other (noted in Additional Context)
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (optional)
+      placeholder: "Anything noteworthy for partial credit."
+
+  - type: input
+    id: time_spent
+    attributes:
+      label: Time Spent
+      placeholder: "3.5 hours"
