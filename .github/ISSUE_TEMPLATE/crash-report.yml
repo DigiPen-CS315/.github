@@ -6,6 +6,7 @@ body:
     id: scenario
     attributes:
       label: Scenario
+      description: Select the scenario you investigated. See project documentation for details.
       options:
         - 1
         - 2
@@ -20,7 +21,8 @@ body:
   - type: dropdown
     id: pattern
     attributes:
-      label: Crash Pattern (from the slides)
+      label: Crash Pattern
+      description: Select the crash pattern that best matches the issue you investigated. See Crash Patterns slides for details.
       options:
         - Null Data Pointer
         - Null Class/Struct Pointer
@@ -41,6 +43,7 @@ body:
     id: exception_code
     attributes:
       label: Exception code (e.g., 0xC0000005)
+      description: Copy/Paste the Exception Code from the Visual Studio Exception Assistant window.
     validations:
       required: true
 
@@ -87,7 +90,8 @@ body:
   - type: checkboxes
     id: evidence
     attributes:
-      label: Evidence reviewed (what did you use to trace the issue)
+      label: Evidence reviewed
+      description: What did you use to trace the issue? (check all that apply)
       options:
         - label: Registers
         - label: Stack memory
@@ -109,7 +113,8 @@ body:
   - type: textarea
     id: extra
     attributes:
-      label: Extra Credit (optional) - Scenarios 1, 2, 6, and 7 only.  See project documentation.
+      label: Extra Credit (optional)
+      description: Scenarios 1, 2, 6, and 7 only.  See project documentation.
       placeholder: "Anything noteworthy for extra credit."
 
   - type: input
