@@ -110,6 +110,13 @@ body:
       required: true
 
   - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (optional)
+      render: text
+      placeholder: "Anything noteworthy for partial credit."
+
+  - type: textarea
     id: fix
     attributes:
       label: Potential Fix / Mitigation
@@ -118,13 +125,6 @@ body:
       placeholder: "Add null-check in dllX!Foo; validate input in caller…"
     validations:
       required: true
-
-  - type: textarea
-    id: additional
-    attributes:
-      label: Additional Context (optional)
-      render: text
-      placeholder: "Anything noteworthy for partial credit."
 
   - type: textarea
     id: extra
