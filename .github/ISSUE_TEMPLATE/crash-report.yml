@@ -39,7 +39,7 @@ body:
     validations:
       required: true
   
-  - type: input
+  - type: textarea
     id: exception_code
     attributes:
       label: Exception code
@@ -49,7 +49,7 @@ body:
     validations:
       required: true
   
-  - type: input
+  - type: textarea
     id: instruction
     attributes:
       label: Crashing instruction
@@ -134,7 +134,7 @@ body:
       render: text
       placeholder: "Anything noteworthy for extra credit."
 
-  - type: input
+  - type: textarea
     id: time
     attributes:
       label: Time Spent (hours)
