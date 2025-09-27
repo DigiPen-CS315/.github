@@ -1,0 +1,51 @@
+name: Crash Report
+description: One report per scenario
+labels: ["crash-report"]
+body:
+  - type: dropdown
+    id: scenario
+    attributes:
+      label: Scenario
+      options:
+        - 1: Null Data Pointer
+        - 2: Null Class/Struct Pointer
+        - 3: Out of Bounds - Access Violation (read)
+        - 4: Out of Bounds - Access Violation (write)
+        - 5: Null Function Pointer
+        - 6: Bad Function Pointer
+        - 7: Bad Virtual Function Call
+        - 8: Corrupt Return Address
+        - 9: Incorrect Call Stack
+        - 10: Stack Overflow
+        - 11: Division by Zero
+        - 12: Uncaught C++ Exception
+    validations:
+      required: true
+  - type: input
+    id: exception_code
+    attributes:
+      label: Exception code (e.g., 0xC0000005)
+  - type: textarea
+    id: windbg_analyze
+    attributes:
+      label: WinDbg `!analyze -v` key excerpt
+      description: Paste only the key excerpt (exception info + stack summary)
+      render: text
+  - type: textarea
+    id: stacktrace
+    attributes:
+      label: Cleaned call stack (module!symbol+offset)
+      description: Copy/Paste the Call Stack from the Visual Studio call stack window.
+      render: text
+  - type: textarea
+    id: root_cause
+    attributes:
+      label: Root cause summary (2–4 sentences)
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal repro steps (if known)
+  - type: textarea
+    id: fix
+    attributes:
+      label: Likely fix or mitigation (1–2 sentences)
