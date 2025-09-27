@@ -14,7 +14,6 @@ body:
         - 5
         - 6
         - 7
-      placeholder: -
     validations:
       required: true
   
