@@ -41,6 +41,8 @@ body:
     id: exception_code
     attributes:
       label: Exception code (e.g., 0xC0000005)
+    validations:
+      required: true
 
   - type: textarea
     id: why
@@ -57,6 +59,8 @@ body:
       label: Root Cause Summary
       description: 2–4 sentences explaining what went wrong and why (tie to frames/instruction).
       placeholder: "Likely null pointer passed into dllX!Foo from …"
+    validations:
+      required: true
 
   - type: textarea
     id: stacktrace
@@ -68,6 +72,8 @@ body:
         dllX!Foo+0x30
         dllX!Bar+0x120
         app!Main+0x90
+    validations:
+      required: true
 
   - type: textarea
     id: fix
@@ -75,6 +81,8 @@ body:
       label: Potential Fix / Mitigation
       description: 1–2 sentences.
       placeholder: "Add null-check in dllX!Foo; validate input in caller…"
+    validations:
+      required: true
 
   - type: checkboxes
     id: evidence
@@ -89,6 +97,8 @@ body:
         - label: Modules window
         - label: Live debugger (tracing)
         - label: Other (noted in Additional Context)
+    validations:
+      required: true
 
   - type: textarea
     id: additional
@@ -97,7 +107,9 @@ body:
       placeholder: "Anything noteworthy for partial credit."
 
   - type: input
-    id: time_spent
+    id: time
     attributes:
-      label: Time Spent
+      label: Time Spent (hours)
       placeholder: "3.5 hours"
+    validations:
+      required: true
