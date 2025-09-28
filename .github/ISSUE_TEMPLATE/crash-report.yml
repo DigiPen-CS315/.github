@@ -64,7 +64,6 @@ body:
     attributes:
       label: Why is this the pattern?
       description: Briefly justify your pattern selection (2–4 sentences).
-      render: text
       placeholder: "I chose Null pointer deref because …"
     validations:
       required: true
@@ -74,7 +73,6 @@ body:
     attributes:
       label: Root Cause Summary
       description: 2–4 sentences explaining what went wrong and why (tie to frames/instruction).
-      render: text
       placeholder: "Likely null pointer passed into dllX!Foo from …"
     validations:
       required: true
@@ -113,7 +111,6 @@ body:
     id: additional
     attributes:
       label: Additional Context (optional)
-      render: text
       placeholder: "Anything noteworthy for partial credit."
 
   - type: textarea
@@ -121,7 +118,6 @@ body:
     attributes:
       label: Potential Fix / Mitigation
       description: 1–2 sentences.
-      render: text
       placeholder: "Add null-check in dllX!Foo; validate input in caller…"
     validations:
       required: true
@@ -131,14 +127,12 @@ body:
     attributes:
       label: Extra Credit (optional)
       description: Scenarios 1, 2, 6, and 7 only.  See project documentation.
-      render: text
       placeholder: "Anything noteworthy for extra credit."
 
   - type: textarea
     id: time
     attributes:
       label: Time Spent (hours)
-      render: text
       placeholder: "3.5 hours"
     validations:
       required: true
