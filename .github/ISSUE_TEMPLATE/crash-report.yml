@@ -24,12 +24,12 @@ body:
       label: Crash Pattern
       description: Select the crash pattern that best matches the issue you investigated. See Crash Patterns slides for details.
       options:
-        - Null Data Pointer
-        - Null Class/Struct Pointer
+        - Null Data Pointer Dereference
+        - Null Class/Struct Pointer Dereference
         - Out of Bounds - Access Violation (read)
         - Out of Bounds - Access Violation (write)
-        - Null Function Pointer
-        - Bad Function Pointer
+        - Null Function Pointer Call
+        - Bad Function Pointer Call
         - Bad Virtual Function Call
         - Corrupt Return Address
         - Incorrect Call Stack
