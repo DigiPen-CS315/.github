@@ -52,7 +52,7 @@ body:
   - type: textarea
     id: instruction
     attributes:
-      label: Crashing instruction
+      label: Crashing Instruction
       description: Copy/Paste the crashing instruction from the Visual Studio Disassembly window.
       render: asm
       placeholder: "idiv eax, ecx"
