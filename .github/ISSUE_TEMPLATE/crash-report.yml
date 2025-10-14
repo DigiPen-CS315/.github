@@ -53,7 +53,7 @@ body:
     id: instruction
     attributes:
       label: Crashing Instruction
-      description: Copy/Paste the crashing instruction from the Visual Studio Disassembly window.
+      description: Copy/Paste the crashing instruction from the Visual Studio Disassembly window.  This should be a single instruction, or no more than a small group of instructions.
       render: asm
       placeholder: "idiv eax, ecx"
     validations:
